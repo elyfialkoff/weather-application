@@ -1,0 +1,10 @@
+In order to use this weather application:
+
+create a .env file and add API_KEY with your api key from https://openweathermap.org/
+  - you will need to sign up to get a key (its all free, and will only take a few minutes)
+
+then run npm install
+
+then run node app.js <cityname,country>
+
+note that if the city has multiple words then you will need to surround it with single quotes
