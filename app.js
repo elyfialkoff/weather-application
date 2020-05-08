@@ -6,16 +6,25 @@ const API_KEY = process.env.API_KEY;
 
 const processInputs = () => {
   const inputs = {}
-  var index = process.argv.indexOf('-l')
+  var index;
+  index = process.argv.indexOf('-l')
   if (index > 0){
     inputs['location'] = process.argv[index + 1]
+  }
+  index = process.argv.indexOf('-m')
+  if (index > 0){
+    inputs['tempUnits'] = 'metric'
+  } else {
+    inputs['tempUnits'] = 'imperial'
   }
   return inputs
 }
 
 const inputs = processInputs()
 
-const url = `http://api.openweathermap.org/data/2.5/weather?q=${inputs.location}&units=metric&appid=${API_KEY}`;
+console.log(`${inputs.metric ? '&units=metric' : ''}`)
+
+const url = `http://api.openweathermap.org/data/2.5/weather?q=${inputs.location}&units=${inputs.tempUnits}&appid=${API_KEY}`;
 
 console.log(process.argv)
 

@@ -5,6 +5,7 @@ create a .env file and add API_KEY with your api key from https://openweathermap
 
 then run npm install
 
-then run node app.js <cityname,country>
+then run node app.js -l <cityname,country>
+by default the temperature is returned in imperial, if you want metric add the -m flag
 
 note that if the city has multiple words then you will need to surround it with single quotes
